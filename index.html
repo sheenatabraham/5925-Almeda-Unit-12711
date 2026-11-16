@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller  Dashboard | Real Broker</title>
+<!-- Importing Glacial Indifference font via CDN -->
+<link href="https://fonts.cdnfonts.com/css/glacial-indifference" rel="stylesheet">
+<style>
+:root {
+--bg-color: #ffffff;
+--text-color: #000000;
+--accent-blue: #599ce6;
+--block-bg: #738a9c;
+--block-text: #ffffff;
+--font-family: 'Glacial Indifference', sans-serif;
+}
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: var(--font-family);
+        line-height: 1.6;
+    }
+
+    /* Header Layout */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        border-bottom: 2px solid var(--accent-blue);
+    }
+
+    .logo-container img {
+        height: 40px;
+        width: auto;
+        content: url('Real Logo Knockout Black with White Wordmark_2.png');
+        background-color: #000; /* Dark background to reveal white text */
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .header-address {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--accent-blue);
+    }
+
+    /* Container & Grid Elements */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .section {
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        color: var(--accent-blue);
+        border-bottom: 2px solid var(--accent-blue);
+        padding-bottom: 8px;
+    }
+
+    /* Card Elements */
+    .block-card {
+        background-color: var(--block-bg);
+        color: var(--block-text);
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .block-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* Checklist Styling */
+    .checklist {
+        list-style: none;
+    }
+
+    .checklist li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+    }
+
+    .checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-blue);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    /* Roadmap List */
+    .roadmap-step {
+        border-left: 4px solid var(--accent-blue);
+        padding-left: 20px;
+        margin-bottom: 25px;
+    }
+
+    .roadmap-step h4 {
+        font-size: 1.2rem;
+        color: var(--accent-blue);
+    }
+
+    /* Agent Footer Block */
+    .agent-card {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        background-color: var(--block-bg);
+        color: var(--block-text);
+        padding: 30px;
+        border-radius: 8px;
+    }
+
+    .agent-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 3px solid var(--accent-blue);
+    }
+
+    .agent-details a {
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+  <!-- Header Section -->
+<header>
+    <div class="logo-container">
+        <img src="Real Logo Knockout Black with White Wordmark_2.png" alt="Real Broker Logo">
+    </div>
+    <div class="header-address">
+        5925 Almeda Rd, Unit 12711
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Welcome Section -->
+    <section class="section">
+        <h2>Welcome to Your Listing Portal</h2>
+        <p style="font-size: 1.2rem;">We are excited to partner with you on selling your home! This interactive dashboard will keep you updated every step of the way—from initial prep work to marketing campaigns and contract milestones.</p>
+    </section>
+
+    <!-- How Buyers Will See Your Home -->
+    <section class="section">
+        <h2>How Buyers Will See Your Home</h2>
+        <div class="grid-2">
+            <div class="block-card">
+                <h3>High-Resolution Media</h3>
+                <p>Professional photography featured prominently on MLS and top portals.</p>
+            </div>
+            <div class="block-card">
+                <h3>Targeted Digital Ads</h3>
+                <p>Custom social media ad campaigns driving targeted local and relocating buyers directly to your listing page.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Listing Checklist -->
+    <section class="section">
+        <h2>Your Listing Checklist</h2>
+        <ul class="checklist">
+            <li>Complete Seller Disclosure Forms</li>
+            <li>Light staging and professional photography</li>
+            <li>Video reels</li>
+            <li>Go Live on MLS & Launch Marketing Campaign</li>
+        </ul>
+    </section>
+
+    <!-- Home Features -->
+    <section class="section">
+        <h2>Home Features Highlight</h2>
+        <div class="grid-3">
+            <div class="block-card">
+                <h3>Interior Highlights</h3>
+                <p>27th floor view, high ceilings, modern finishes, updated kitchen appliances, luxurious amenities, 24/7 concierge, and parking spot.</p>
+            </div>             
+            <div class="block-card">
+                <h3>Neighborhood</h3>
+                <p>Close proximity to med center, golf, museum district, downtown and more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section">
+        <h2>Roadmap: From Prep to Closing</h2>
+        <div class="roadmap-step">
+            <h4>Phase 1: Pre-Listing & Strategy</h4>
+            <p>Home prep, staging, professional photography, pricing review, and listing setup.</p>
+        </div>
+        <div class="roadmap-step">
+            <h4>Phase 2: Active Marketing & Showings</h4>
+            <p>MLS launch, open houses, targeted digital ad placement, and showing feedback collection.</p>
+        </div>
+        <div class="roadmap-step">
+            <h4>Phase 3: Under Contract</h4>
+            <p>Negotiating offers, managing inspection windows, appraisal process, and title clearance.</p>
+        </div>
+        <div class="roadmap-step">
+            <h4>Phase 4: Clear to Close</h4>
+            <p>Final walkthrough verification, signing closing documents, and key exchange!</p>
+        </div>
+    </section>
+
+    <!-- Marketing Section -->
+    <section class="section">
+        <h2>Active Marketing Efforts</h2>
+        <div class="block-card">
+            <h3>Campaign Highlights & Stats</h3>
+            <p style="margin-bottom: 10px;">• Facebook & Instagram Video Ad: <strong>TBD Views</strong></p>
+            <p style="margin-bottom: 10px;">
+            <p>• 8/8/2026, 4 sets of visitors</p>
+            <p>• 8/15/2026, 2 sets of visitors (one repeat) </p>
+            <p>• 8/25/2026, Tuesday, no visitors</p>
+            <p>• 9/13/2026,x </p>
+            <p>• 10/3/2026, 1 set of visitors (repeat visit)</p>
+            <p>• 10/17/2026, 1 set of visitors</p>
+            <p>• 10/24/2026, canceled due to signed offer</p>
+            <h3>9 Buyer Agent Showings</h3>
+            <p style="margin-bottom: 10px;">
+            <p>8/13, 8/17, 8/31, 9/1, 9/12, 9/21, 10/19, 10/25, 10/29</p>
+            
+        </div>
+    </section>
+
+    <!-- Agent Contact Section -->
+    <section class="section">
+        <h2>Your Real Estate Team</h2>
+        <div class="agent-card">
+            <div class="agent-avatar"></div>
+            <div class="agent-details">
+                <h3>Sheena Abraham</h3>
+                <p>Real Estate Advisor | Real Broker</p>
+                <p>Phone: (832) 527-2570</p>
+                <p>Email: <a href="mailto:sheena@carvedlemonliving.com">sheena@carvedlemonliving.com</a></p>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
