@@ -704,6 +704,66 @@
       align-items: flex-start;
     }
   }
+  /* ================= CONTRACT TIMELINE TABLE ================= */
+  .timeline-table-wrap {
+    margin-top: 12px;
+    overflow-x: auto;
+    border-radius: 3px;
+    border: 1px solid #BAE6FD;
+    background-color: #FFFFFF;
+  }
+
+  .timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    text-align: left;
+  }
+
+  .timeline-table th {
+    background-color: var(--bg-dark);
+    color: var(--cyan);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    padding: 9px 12px;
+    border-bottom: 2px solid var(--cyan);
+  }
+
+  .timeline-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .timeline-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .timeline-table tr:nth-child(even) td {
+    background-color: #F9FAFB;
+  }
+
+  .timeline-date {
+    font-weight: 700;
+    color: var(--text-main);
+    white-space: nowrap;
+  }
+
+  .timeline-milestone {
+    font-weight: 700;
+    color: var(--cyan-dark);
+  }
+
+  @media (max-width: 640px) {
+    .timeline-date {
+      white-space: normal;
+    }
+  }
 </style>
 </head>
 <body>
@@ -715,7 +775,7 @@
         <div class="logo-badge">SA</div>
         <div class="brand-text-group">
           <span class="brand-name">Sheena Abraham</span>
-          <span class="brand-sub">Real Estate Advisor • Real Broker</span>
+          <span class="brand-sub">Real Estate Advisor • Real Broker LLC</span>
         </div>
       </div>
 
@@ -756,7 +816,7 @@
         <div>
           <div class="agent-col-label">Your Listing Advisor</div>
           <div class="agent-col-name">Sheena Abraham</div>
-          <div class="agent-col-detail">Real Broker • Carved Lemon Living</div>
+          <div class="agent-col-detail">Real Broker LLC </div>
         </div>
         <div>
           <div class="agent-col-label">Direct Contact</div>
@@ -785,8 +845,61 @@
           Bookmark this link to check in anytime on your marketing performance, open house feedback, and upcoming closing steps.
         </p>
         <div class="callout-box">
-          <div class="callout-title">Milestone Update</div>
-          <p>Following 9 private buyer agent showings and 6 open house events, the 10/24/2026 open house was canceled due to a signed offer!</p>
+          <div class="callout-title">Contract Timeline</div>
+          <p style="margin-bottom: 10px;">Following 9 private buyer agent showings and 6 open house events, we are officially under contract! Below are your key contract milestones and deadlines:</p>
+          <div class="timeline-table-wrap">
+            <table class="timeline-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Milestone / Deadline</th>
+                  <th>Contract Reference & Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="timeline-date">Friday, Oct 30, 2026</td>
+                  <td class="timeline-milestone">Effective Date</td>
+                  <td>Final acceptance signed by all parties (Paragraph 23).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Monday, Nov 2, 2026</td>
+                  <td class="timeline-milestone">Earnest Money & Option Fee Due</td>
+                  <td>Due within 3 days after the Effective Date to Allied Title & Escrow, LLC: $2,600.00 earnest money and $350.00 option fee (Paragraph 5A).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Friday, Nov 6, 2026<br><span style="font-weight: 500; font-size: 0.75rem; color: var(--text-muted);">(by 5:00 p.m.)</span></td>
+                  <td class="timeline-milestone">Option Period Ends</td>
+                  <td>7 days after the Effective Date to complete inspections and exercise the unrestricted right to terminate (Paragraph 5B).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Monday, Nov 16, 2026</td>
+                  <td class="timeline-milestone">Buyer Financing Approval Deadline</td>
+                  <td>17 days after the Effective Date to obtain Buyer Approval or give written notice of termination with a lender statement (Third Party Financing Addendum, Paragraph 2A).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Thursday, Nov 19, 2026</td>
+                  <td class="timeline-milestone">Title Commitment Delivery Deadline</td>
+                  <td>Within 20 days after the Title Company receives the contract (assuming receipt on Oct 30; automatically extends up to 15 days or 3 days before closing if delayed) (Paragraph 6B).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">3 Days After Title Receipt</td>
+                  <td class="timeline-milestone">Title Objection Deadline</td>
+                  <td>Buyer must object to title defects within 3 days after receiving the Commitment and Exception Documents, or prior to closing, whichever is earlier (Paragraph 6C).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Friday, Nov 27, 2026</td>
+                  <td class="timeline-milestone">Property Approval Deadline</td>
+                  <td>On or before the 3rd day before the Closing Date to terminate if the property fails lender underwriting requirements such as appraisal, insurability, or lender-required repairs (Third Party Financing Addendum, Paragraph 2B).</td>
+                </tr>
+                <tr>
+                  <td class="timeline-date">Monday, Nov 30, 2026</td>
+                  <td class="timeline-milestone">Closing & Funding Date</td>
+                  <td>On or before November 30, 2026 (or within 7 days after title objections are cured, whichever is later) (Paragraph 9A). Possession transfers upon closing and funding (Paragraph 10A).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -821,7 +934,8 @@
           </div>
           <span class="status-pill">Views: TBD</span>
         </div>
-
+        
+        <div class="activity-title">Open Houses</div>
         <div class="log-grid">
           <div class="log-item"><strong>8/8/2026:</strong> 4 sets of visitors</div>
           <div class="log-item"><strong>8/15/2026:</strong> 2 sets of visitors (1 repeat)</div>
@@ -977,7 +1091,7 @@
       <div class="cta-buttons">
         <a href="tel:8325272570" class="btn-cyan">Call (832) 527-2570</a>
         <a href="sms:8325272570" class="btn-cyan">Text Sheena</a>
-        <a href="mailto:sheena@carvedlemonliving.com" class="btn-cyan">Email Advisor</a>
+        <a href="mailto:sheena@carvedlemonliving.com" class="btn-cyan">Email Sheena</a>
       </div>
     </section>
 
