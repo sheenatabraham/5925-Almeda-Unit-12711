@@ -3,277 +3,995 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seller  Dashboard | Real Broker</title>
-<!-- Importing Glacial Indifference font via CDN -->
-<link href="https://fonts.cdnfonts.com/css/glacial-indifference" rel="stylesheet">
+<title>5925 Almeda Rd, Unit 12711 | Seller Dashboard — Real Broker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
---bg-color: #ffffff;
---text-color: #000000;
---accent-blue: #599ce6;
---block-bg: #738a9c;
---block-text: #ffffff;
---font-family: 'Glacial Indifference', sans-serif;
-}
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+  :root {
+    --bg-dark: #0A0A0A;
+    --bg-dark-card: #141414;
+    --bg-page: #EFEFEF;
+    --bg-card: #FFFFFF;
+    --cyan: #19B5FE;
+    --cyan-dark: #0EA5E9;
+    --cyan-tint: #F0F9FF;
+    --text-main: #111827;
+    --text-muted: #4B5563;
+    --text-light: #9CA3AF;
+    --border-light: #E5E7EB;
+    --border-dark: #262626;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
 
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: var(--font-family);
-        line-height: 1.6;
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Header Layout */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        border-bottom: 2px solid var(--accent-blue);
-    }
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    .logo-container img {
-        height: 40px;
-        width: auto;
-        content: url('Real Logo Knockout Black with White Wordmark_2.png');
-        background-color: #000; /* Dark background to reveal white text */
-        padding: 5px 10px;
-        border-radius: 4px;
-    }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
-    .header-address {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: var(--accent-blue);
-    }
+  /* ================= HERO SECTION ================= */
+  .hero {
+    background-color: var(--bg-dark);
+    color: #FFFFFF;
+    padding: 36px 0 40px;
+    border-bottom: 2px solid var(--cyan);
+  }
 
-    /* Container & Grid Elements */
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
 
-    .section {
-        margin-bottom: 50px;
-    }
+  .logo-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    flex-shrink: 0;
+  }
 
-    h2 {
-        font-size: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-        color: var(--accent-blue);
-        border-bottom: 2px solid var(--accent-blue);
-        padding-bottom: 8px;
-    }
+  .brand-text-group {
+    display: flex;
+    flex-direction: column;
+  }
 
-    /* Card Elements */
-    .block-card {
-        background-color: var(--block-bg);
-        color: var(--block-text);
-        padding: 30px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
 
-    .block-card h3 {
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-    }
+  .brand-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-top: 2px;
+  }
 
-    .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
+  .pill-badge {
+    display: inline-block;
+    background-color: var(--cyan);
+    color: #000000;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
 
-    .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.3rem, 5vw, 3.2rem);
+    line-height: 1.02;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
 
-    /* Checklist Styling */
-    .checklist {
-        list-style: none;
-    }
+  .hero-title span {
+    display: block;
+    color: var(--cyan);
+  }
 
-    .checklist li {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 12px;
-        font-size: 1.1rem;
-    }
+  .hero-desc {
+    color: #D1D5DB;
+    font-size: 0.92rem;
+    max-width: 580px;
+    margin-bottom: 28px;
+  }
 
-    .checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--accent-blue);
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
+  /* 4-Column Stats Bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--bg-dark-card);
+    border: 1px solid var(--border-dark);
+    border-left: 3px solid var(--cyan);
+    border-radius: 3px;
+  }
 
-    /* Roadmap List */
-    .roadmap-step {
-        border-left: 4px solid var(--accent-blue);
-        padding-left: 20px;
-        margin-bottom: 25px;
-    }
+  .stat-item {
+    padding: 14px 16px;
+    border-right: 1px solid var(--border-dark);
+  }
 
-    .roadmap-step h4 {
-        font-size: 1.2rem;
-        color: var(--accent-blue);
-    }
+  .stat-item:last-child {
+    border-right: none;
+  }
 
-    /* Agent Footer Block */
-    .agent-card {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        background-color: var(--block-bg);
-        color: var(--block-text);
-        padding: 30px;
-        border-radius: 8px;
-    }
+  .stat-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
 
-    .agent-avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color: #fff;
-        border: 3px solid var(--accent-blue);
-    }
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
 
-    .agent-details a {
-        color: var(--accent-blue);
-        text-decoration: none;
-        font-weight: bold;
+  .stat-value.cyan {
+    color: var(--cyan);
+  }
+
+  /* ================= AGENT SUB-HEADER BAR ================= */
+  .agent-bar {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-dark);
+    margin-bottom: 32px;
+  }
+
+  .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .agent-col-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 4px;
+  }
+
+  .agent-col-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .agent-col-detail {
+    font-size: 0.85rem;
+    color: #D1D5DB;
+  }
+
+  .agent-col-detail a {
+    color: #D1D5DB;
+    text-decoration: none;
+  }
+
+  .agent-col-detail a:hover {
+    color: var(--cyan);
+  }
+
+  /* ================= SECTION CARDS ================= */
+  .section-card {
+    background-color: var(--bg-card);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .card-top-bar {
+    background-color: var(--cyan);
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .step-num {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .step-tag {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .card-body {
+    padding: 26px 28px 30px;
+  }
+
+  .card-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+
+  .card-heading span {
+    color: var(--cyan-dark);
+  }
+
+  .card-body p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .card-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Callout Notice Box inside White Cards */
+  .callout-box {
+    background-color: var(--cyan-tint);
+    border-left: 3px solid var(--cyan);
+    padding: 14px 18px;
+    margin-top: 18px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .callout-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cyan-dark);
+    margin-bottom: 4px;
+  }
+
+  .callout-box p {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  /* ================= DARK ACTION / ACTIVITY CARD ================= */
+  .dark-section-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .dark-floating-badge {
+    display: inline-block;
+    background-color: var(--cyan);
+    color: #000000;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px 2px 0 0;
+    margin-left: 18px;
+  }
+
+  .dark-card {
+    background-color: var(--bg-dark);
+    color: #FFFFFF;
+    padding: 28px;
+    border-radius: 4px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark-card .card-heading {
+    color: #FFFFFF;
+  }
+
+  .dark-card .card-heading span {
+    color: var(--cyan);
+  }
+
+  .dark-card > p {
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .activity-row {
+    background-color: var(--bg-dark-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .activity-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .activity-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .activity-num {
+    background-color: rgba(25, 181, 254, 0.15);
+    color: var(--cyan);
+    border: 1px solid rgba(25, 181, 254, 0.4);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .activity-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .activity-sub {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  .status-pill {
+    background-color: var(--cyan);
+    color: #000000;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  /* Open House Log Grid inside Dark Card */
+  .log-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .log-item {
+    background-color: var(--bg-dark-card);
+    border-left: 2px solid var(--cyan);
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #E5E7EB;
+  }
+
+  .log-item strong {
+    color: var(--cyan);
+  }
+
+  /* ================= CHECKLIST ================= */
+  .checklist {
+    list-style: none;
+    margin-top: 8px;
+  }
+
+  .checklist li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    color: var(--text-main);
+  }
+
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: var(--cyan-dark);
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+  /* ================= 2x2 FEATURE BOXES ================= */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .feature-box {
+    background-color: #F9FAFB;
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--cyan);
+    padding: 14px 16px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .feature-box-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cyan-dark);
+    margin-bottom: 4px;
+  }
+
+  .feature-box-text {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+  }
+
+  /* ================= ROADMAP TIMELINE ================= */
+  .roadmap-list {
+    margin-top: 10px;
+  }
+
+  .roadmap-item {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .roadmap-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .phase-badge {
+    background-color: var(--bg-dark);
+    color: var(--cyan);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    height: fit-content;
+    white-space: nowrap;
+  }
+
+  .roadmap-content h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
+
+  .roadmap-content p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  /* ================= FAQ ACCORDION ================= */
+  details {
+    border-bottom: 1px solid var(--border-light);
+    padding: 14px 0;
+  }
+
+  details:first-of-type {
+    padding-top: 6px;
+  }
+
+  details:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  summary {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "+";
+    color: var(--cyan-dark);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-left: 12px;
+  }
+
+  details[open] summary::after {
+    content: "−";
+  }
+
+  details p {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* ================= CTA BANNER ================= */
+  .cta-card {
+    background-color: var(--bg-dark);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 36px 24px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+  }
+
+  .cta-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .cta-title span {
+    color: var(--cyan);
+  }
+
+  .cta-sub {
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    max-width: 460px;
+    margin: 0 auto 22px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn-cyan {
+    background-color: var(--cyan);
+    color: #000000;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: background-color 0.15s ease;
+  }
+
+  .btn-cyan:hover {
+    background-color: #38BDF8;
+  }
+
+  /* ================= FOOTER ================= */
+  footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 34px 20px;
+    border-top: 1px solid var(--border-dark);
+  }
+
+  .footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .real-box {
+    border: 1.5px solid #FFFFFF;
+    color: #FFFFFF;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+  }
+
+  footer p {
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 640px) {
+    .stats-bar {
+      grid-template-columns: repeat(2, 1fr);
     }
+    .stat-item:nth-child(2) {
+      border-right: none;
+    }
+    .stat-item:nth-child(1),
+    .stat-item:nth-child(2) {
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .agent-grid,
+    .feature-grid,
+    .log-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-body,
+    .dark-card {
+      padding: 22px 20px;
+    }
+    .activity-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 </style>
 </head>
 <body>
-  <!-- Header Section -->
-<header>
-    <div class="logo-container">
-        <img src="Real Logo Knockout Black with White Wordmark_2.png" alt="Real Broker Logo">
-    </div>
-    <div class="header-address">
+
+  <!-- HERO HEADER -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand-row">
+        <div class="logo-badge">SA</div>
+        <div class="brand-text-group">
+          <span class="brand-name">Sheena Abraham</span>
+          <span class="brand-sub">Real Estate Advisor • Real Broker</span>
+        </div>
+      </div>
+
+      <div class="pill-badge">Seller Portal</div>
+      <h1 class="hero-title">
         5925 Almeda Rd, Unit 12711
+        <span>Houston, TX 77004</span>
+      </h1>
+      <p class="hero-desc">
+        Welcome to your dedicated listing dashboard—everything we're doing to market, showcase, and sell your property, all in one place.
+      </p>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-label">Listing Status</div>
+          <div class="stat-value cyan">Offer Signed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Agent Showings</div>
+          <div class="stat-value">9 Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Open Houses</div>
+          <div class="stat-value">6 Hosted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Brokerage</div>
+          <div class="stat-value">Real Broker</div>
+        </div>
+      </div>
     </div>
-</header>
+  </header>
 
-<div class="container">
-
-    <!-- Welcome Section -->
-    <section class="section">
-        <h2>Welcome to Your Listing Portal</h2>
-        <p style="font-size: 1.2rem;">We are excited to partner with you on selling your home! This interactive dashboard will keep you updated every step of the way—from initial prep work to marketing campaigns and contract milestones.</p>
-    </section>
-
-    <!-- How Buyers Will See Your Home -->
-    <section class="section">
-        <h2>How Buyers Will See Your Home</h2>
-        <div class="grid-2">
-            <div class="block-card">
-                <h3>High-Resolution Media</h3>
-                <p>Professional photography featured prominently on MLS and top portals.</p>
-            </div>
-            <div class="block-card">
-                <h3>Targeted Digital Ads</h3>
-                <p>Custom social media ad campaigns driving targeted local and relocating buyers directly to your listing page.</p>
-            </div>
+  <!-- AGENT CONTACT BAR -->
+  <div class="agent-bar">
+    <div class="wrap">
+      <div class="agent-grid">
+        <div>
+          <div class="agent-col-label">Your Listing Advisor</div>
+          <div class="agent-col-name">Sheena Abraham</div>
+          <div class="agent-col-detail">Real Broker • Carved Lemon Living</div>
         </div>
+        <div>
+          <div class="agent-col-label">Direct Contact</div>
+          <div class="agent-col-detail"><a href="tel:8325272570">(832) 527-2570</a></div>
+          <div class="agent-col-detail"><a href="mailto:sheena@carvedlemonliving.com">sheena@carvedlemonliving.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="wrap">
+
+    <!-- 01: WELCOME -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">01</span>
+        <span class="step-tag">Overview</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">Welcome to Your <span>Listing Journey</span></h2>
+        <p>
+          We are excited to partner with you on selling your home! This interactive dashboard keeps you updated every step of the way—from initial preparation and high-impact marketing campaigns to showings and contract milestones.
+        </p>
+        <p>
+          Bookmark this link to check in anytime on your marketing performance, open house feedback, and upcoming closing steps.
+        </p>
+        <div class="callout-box">
+          <div class="callout-title">Milestone Update</div>
+          <p>Following 9 private buyer agent showings and 6 open house events, the 10/24/2026 open house was canceled due to a signed offer!</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Your Listing Checklist -->
-    <section class="section">
-        <h2>Your Listing Checklist</h2>
+    <!-- DARK CALLOUT CARD: ACTIVE MARKETING & SHOWING STATS -->
+    <div class="dark-section-wrapper">
+      <div class="dark-floating-badge">Live Campaign Tracker</div>
+      <section class="dark-card">
+        <h2 class="card-heading">Active Marketing <span>Efforts & Activity</span></h2>
+        <p>
+          Here is a live summary of our digital ad reach, private buyer agent showings, and weekend open house traffic.
+        </p>
+
+        <div class="activity-row">
+          <div class="activity-left">
+            <div class="activity-num">1</div>
+            <div>
+              <div class="activity-title">Buyer Agent Private Showings</div>
+              <div class="activity-sub">Dates: 8/13, 8/17, 8/31, 9/1, 9/12, 9/21, 10/19, 10/25, 10/29</div>
+            </div>
+          </div>
+          <span class="status-pill">9 Showings</span>
+        </div>
+
+        <div class="activity-row">
+          <div class="activity-left">
+            <div class="activity-num">2</div>
+            <div>
+              <div class="activity-title">Facebook & Instagram Video Ad Campaign</div>
+              <div class="activity-sub">Targeted local & relocating Houston buyer reach</div>
+            </div>
+          </div>
+          <span class="status-pill">Views: TBD</span>
+        </div>
+
+        <div class="log-grid">
+          <div class="log-item"><strong>8/8/2026:</strong> 4 sets of visitors</div>
+          <div class="log-item"><strong>8/15/2026:</strong> 2 sets of visitors (1 repeat)</div>
+          <div class="log-item"><strong>8/25/2026:</strong> Tuesday — no visitors</div>
+          <div class="log-item"><strong>9/13/2026:</strong> Open house hosted</div>
+          <div class="log-item"><strong>10/3/2026:</strong> 1 set of visitors (repeat visit)</div>
+          <div class="log-item"><strong>10/17/2026:</strong> 1 set of visitors</div>
+          <div class="log-item" style="grid-column: 1 / -1;"><strong>10/24/2026:</strong> Canceled due to signed offer</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 02: MARKETING EXPOSURE -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">02</span>
+        <span class="step-tag">Marketing Exposure</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">How Buyers <span>Will See Your Home</span></h2>
+        <p>
+          <strong>High-Resolution Media:</strong> Professional architectural photography and vertical video reels featured prominently on HAR/MLS and top national real estate portals.
+        </p>
+        <p>
+          <strong>Targeted Digital Ads:</strong> Custom Facebook and Instagram ad campaigns driving qualified local and relocating buyers directly to your property showcase.
+        </p>
+      </div>
+    </section>
+
+    <!-- 03: LISTING CHECKLIST -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">03</span>
+        <span class="step-tag">Launch Checklist</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">Your <span>Pre-Listing Checklist</span></h2>
         <ul class="checklist">
-            <li>Complete Seller Disclosure Forms</li>
-            <li>Light staging and professional photography</li>
-            <li>Video reels</li>
-            <li>Go Live on MLS & Launch Marketing Campaign</li>
+          <li>Complete Seller Disclosure Forms</li>
+          <li>Light staging and professional high-resolution photography</li>
+          <li>Vertical property video reels for social media</li>
+          <li>Go live on MLS & launch targeted digital marketing campaign</li>
         </ul>
+        <div class="callout-box">
+          <div class="callout-title">All Launch Items Complete</div>
+          <p>Your property media, disclosures, and MLS syndication are live and actively working to attract qualified buyers.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Home Features -->
-    <section class="section">
-        <h2>Home Features Highlight</h2>
-        <div class="grid-3">
-            <div class="block-card">
-                <h3>Interior Highlights</h3>
-                <p>27th floor view, high ceilings, modern finishes, updated kitchen appliances, luxurious amenities, 24/7 concierge, and parking spot.</p>
-            </div>             
-            <div class="block-card">
-                <h3>Neighborhood</h3>
-                <p>Close proximity to med center, golf, museum district, downtown and more.</p>
+    <!-- 04: HOME FEATURES -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">04</span>
+        <span class="step-tag">Property Highlights</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">Home Features <span>We Highlight</span></h2>
+        <p>
+          We spotlight the exact lifestyle upgrades, building amenities, and location advantages that set Unit 12711 apart from competing listings.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="feature-box-label">Views & Design</div>
+            <div class="feature-box-text">27th floor panoramic views, high ceilings, and modern finishes</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-label">Kitchen & Upgrades</div>
+            <div class="feature-box-text">Updated kitchen appliances and contemporary interior styling</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-label">Building Amenities</div>
+            <div class="feature-box-text">Luxurious building amenities, 24/7 concierge, and dedicated parking spot</div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-label">Prime Location</div>
+            <div class="feature-box-text">Minutes to Texas Medical Center, Hermann Park Golf, Museum District & Downtown</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: ROADMAP -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">05</span>
+        <span class="step-tag">The Process</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">Roadmap: <span>From Prep to Closing</span></h2>
+        <div class="roadmap-list">
+          <div class="roadmap-item">
+            <span class="phase-badge">Phase 01</span>
+            <div class="roadmap-content">
+              <h4>Pre-Listing & Strategy</h4>
+              <p>Home prep, staging, professional photography, pricing review, and listing setup.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Roadmap Section -->
-    <section class="section">
-        <h2>Roadmap: From Prep to Closing</h2>
-        <div class="roadmap-step">
-            <h4>Phase 1: Pre-Listing & Strategy</h4>
-            <p>Home prep, staging, professional photography, pricing review, and listing setup.</p>
-        </div>
-        <div class="roadmap-step">
-            <h4>Phase 2: Active Marketing & Showings</h4>
-            <p>MLS launch, open houses, targeted digital ad placement, and showing feedback collection.</p>
-        </div>
-        <div class="roadmap-step">
-            <h4>Phase 3: Under Contract</h4>
-            <p>Negotiating offers, managing inspection windows, appraisal process, and title clearance.</p>
-        </div>
-        <div class="roadmap-step">
-            <h4>Phase 4: Clear to Close</h4>
-            <p>Final walkthrough verification, signing closing documents, and key exchange!</p>
-        </div>
-    </section>
-
-    <!-- Marketing Section -->
-    <section class="section">
-        <h2>Active Marketing Efforts</h2>
-        <div class="block-card">
-            <h3>Campaign Highlights & Stats</h3>
-            <p style="margin-bottom: 10px;">• Facebook & Instagram Video Ad: <strong>TBD Views</strong></p>
-            <p style="margin-bottom: 10px;">
-            <p>• 8/8/2026, 4 sets of visitors</p>
-            <p>• 8/15/2026, 2 sets of visitors (one repeat) </p>
-            <p>• 8/25/2026, Tuesday, no visitors</p>
-            <p>• 9/13/2026,x </p>
-            <p>• 10/3/2026, 1 set of visitors (repeat visit)</p>
-            <p>• 10/17/2026, 1 set of visitors</p>
-            <p>• 10/24/2026, canceled due to signed offer</p>
-            <h3>9 Buyer Agent Showings</h3>
-            <p style="margin-bottom: 10px;">
-            <p>8/13, 8/17, 8/31, 9/1, 9/12, 9/21, 10/19, 10/25, 10/29</p>
-            
-        </div>
-    </section>
-
-    <!-- Agent Contact Section -->
-    <section class="section">
-        <h2>Your Real Estate Team</h2>
-        <div class="agent-card">
-            <div class="agent-avatar"></div>
-            <div class="agent-details">
-                <h3>Sheena Abraham</h3>
-                <p>Real Estate Advisor | Real Broker</p>
-                <p>Phone: (832) 527-2570</p>
-                <p>Email: <a href="mailto:sheena@carvedlemonliving.com">sheena@carvedlemonliving.com</a></p>
+          </div>
+          <div class="roadmap-item">
+            <span class="phase-badge">Phase 02</span>
+            <div class="roadmap-content">
+              <h4>Active Marketing & Showings</h4>
+              <p>MLS launch, open houses, targeted digital ad placement, and showing feedback collection.</p>
             </div>
+          </div>
+          <div class="roadmap-item">
+            <span class="phase-badge">Phase 03</span>
+            <div class="roadmap-content">
+              <h4>Under Contract</h4>
+              <p>Negotiating offers, managing inspection windows, appraisal process, and title clearance.</p>
+            </div>
+          </div>
+          <div class="roadmap-item">
+            <span class="phase-badge">Phase 04</span>
+            <div class="roadmap-content">
+              <h4>Clear to Close</h4>
+              <p>Final walkthrough verification, signing closing documents, and key exchange!</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-</div>
+    <!-- 06: SELLER FAQ -->
+    <section class="section-card">
+      <div class="card-top-bar">
+        <span class="step-num">06</span>
+        <span class="step-tag">Good to Know</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-heading">Things Sellers <span>Always Ask</span></h2>
+        <details>
+          <summary>How do I receive feedback after showings and open houses?</summary>
+          <p>We follow up directly with every buyer's agent after private showings and log visitor counts and impressions from each open house right here on your dashboard.</p>
+        </details>
+        <details>
+          <summary>What happens once we accept an offer?</summary>
+          <p>Once executed, the contract moves to the title company, the buyer delivers earnest money and option fee, and we navigate the option period, inspection, and appraisal through to closing.</p>
+        </details>
+        <details>
+          <summary>What do I need to bring to the closing table?</summary>
+          <p>Bring a valid government-issued photo ID, any remaining unit keys, fobs, garage remotes, and your wire instructions for receiving your net proceeds.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-card">
+      <h2 class="cta-title">Questions? <span>We're Here.</span></h2>
+      <p class="cta-sub">
+        Have a question about an upcoming milestone, showing feedback, or closing prep? Reach out anytime—we're just a call, text, or email away.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:8325272570" class="btn-cyan">Call (832) 527-2570</a>
+        <a href="sms:8325272570" class="btn-cyan">Text Sheena</a>
+        <a href="mailto:sheena@carvedlemonliving.com" class="btn-cyan">Email Advisor</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logos">
+      <div class="logo-badge" style="width: 36px; height: 36px; font-size: 0.95rem;">SA</div>
+      <div class="real-box">REAL</div>
+    </div>
+    <p>Sheena Abraham • Real Broker, LLC • Carved Lemon Living</p>
+    <p>5925 Almeda Rd, Unit 12711 • Houston, TX 77004</p>
+  </footer>
+
 </body>
 </html>
